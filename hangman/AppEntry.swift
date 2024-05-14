@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct hangmanApp: App {
+struct AppEntry: App {
+    @StateObject var game = GameService()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
+                .environmentObject(game)
         }
     }
 }
